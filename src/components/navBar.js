@@ -1,9 +1,14 @@
 import "./navBar.css";
+const contador=0;
 
 const msgAlert = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    console.log(e);
+    contador++;
+
 }
+
+
 const linkHome = (
   <li >
     <a href="/" onClick={msgAlert}> HOME</a>
@@ -31,6 +36,13 @@ export function NavBar() {
         {linkGaleria}
         {linkNosotros}
       </ul>
+      <div>
+        {contador}
+      </div>
     </div>
+    
+
   );
 }
+
+export default contador;
