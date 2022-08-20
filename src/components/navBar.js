@@ -37,7 +37,7 @@ export function NavBar() {
         {linkNosotros}
       </ul>
       <div>
-        {contador}
+       
       </div>
     </div>
     

@@ -1,9 +1,9 @@
 .contador{
     min-width: 300px;
     height: 300px;
-    font-size: 160px;
+    
     padding: 25px;
-    color:white;
+    color:rgb(22, 14, 14);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,10 +1,11 @@
+import { Children } from "react";
+import "./Contador.css";
 
-import './Contador.css'
-
-export function Contador({numClics}){
-    return(
-        <div className="contador">
-            {numClics}
-        </div>
-    )
+export function Contador(props) {
+  return (
+    <div className="contador">
+      {props.stock}
+      {props.children}
+    </div>
+  );
 }
