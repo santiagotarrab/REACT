@@ -4,16 +4,17 @@ import "./Item.css"
 
 
 export function Item(props) {
+  const ia = "./img/lapiz.png"
   console.log(props.list);
-  
+  console.log(props.list[0].pictureUrl)
   return (
     <>
-      {props.list.map((el) => (
+      {props.list.map((el) =>  (
         
         <div>
           <div>{el.title}</div>
           <div>{el.price}</div>
-          <div> {el.title} </div>
+          <img src={require(`${el.pictureUrl}`)} alt="" />
         
          
           <Contador >
@@ -21,7 +22,8 @@ export function Item(props) {
             <button >+</button>{" "}
           </Contador>
         </div>
-      ))}
+      )
+      )}
     </>
   );
 }
