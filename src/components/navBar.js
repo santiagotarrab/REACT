@@ -1,26 +1,28 @@
 import "./navBar.css";
-const contador=0;
+import {Carrito} from "./Carrito.js";
+
+const contador = 0;
 
 const msgAlert = (e) => {
-    e.preventDefault();
-    console.log(e);
-    contador++;
-
-}
-
+  e.preventDefault();
+  console.log(e);
+  contador++;
+};
 
 const linkHome = (
-  <li >
-    <a href="/" onClick={msgAlert}> HOME</a>
+  <li>
+    <a href="/" onClick={msgAlert}>
+      {" "}
+      HOME
+    </a>
   </li>
 );
 
 const linkGaleria = (
-  <li> 
+  <li>
     <a href="/"> GALERIA</a>
   </li>
-)
-
+);
 
 const linkNosotros = (
   <li>
@@ -32,16 +34,13 @@ export function NavBar() {
   return (
     <div id="navBar">
       <ul>
-        {linkHome}
-        {linkGaleria}
-        {linkNosotros}
+        <li> {linkHome}</li>
+        <li>{linkGaleria}</li>
+        <li>{linkNosotros}</li>
+        <Carrito />
       </ul>
-      <div>
-       
-      </div>
+      <div></div>
     </div>
-    
-
   );
 }
 

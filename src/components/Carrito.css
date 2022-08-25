@@ -1,0 +1,9 @@
+.cart{
+    color:yellow;
+    justify-content: end;
+    position: absolute;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+
+}
