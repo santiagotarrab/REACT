@@ -1,5 +1,6 @@
-import "./navBar.css";
-import {Carrito} from "./Carrito.js";
+
+import "./NavBar.css"
+import {Carrito} from "../Carrito/Carrito"
 
 const contador = 0;
 

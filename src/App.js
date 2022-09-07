@@ -1,10 +1,10 @@
 import "./App.css";
-import { NavBar } from "./components/navBar.js";
-import { Boton } from "./components/Boton";
-import { Contador } from "./components/Contador";
+import { NavBar } from "./components/NavBar/NavBar.js";
+import { Boton } from "./components/Boton/Boton";
+import { Contador } from "./components/Contador/Contador";
 import { useState } from "react";
-import { ItemListContainer } from "./components/ItemListContainer";
-
+import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 
 const estilos = {
   backgroundColor: "blue",
@@ -22,11 +22,15 @@ function App() {
       <div className="">
         <NavBar />
         <ItemListContainer />
+        <ItemDetailContainer />
 
-        <Contador stock={stock}>
+
+
+
+        {/* <Contador stock={stock}>
           <button onClick={restar}>-</button>
           <button onClick={sumar}>+</button>{" "}
-        </Contador>
+        </Contador> */}
       </div>
     </div>
   );

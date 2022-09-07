@@ -1,0 +1,10 @@
+.container-item{
+    width: 200px;
+    border: solid black;
+}
+
+button{
+    width: 30%;
+    padding: 0px;
+    margin: 0px;
+}
