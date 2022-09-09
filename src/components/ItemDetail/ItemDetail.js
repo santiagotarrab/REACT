@@ -1,24 +1,14 @@
 import getFetch from "../../helper/helper"
 import {useState, useEffect} from 'react'
-export function ItemDetail (){
+import { productos } from "../../helper/helper"
+export const ItemDetail = ({id})=>{
 
-    const [data, setData]=useState({})
-    const [loading, setLoading] = useState(true)
-    const [itemSelecc, setItemSelecc]= useState(1)
 
-    
-    useEffect(()=>{
-        getFetch.then((data)=>{
-        setData(data.find(prod=> prod.id===1))
-        setLoading(false)})
-
-    },[])
-    console.log('itemdetail', data)
+    console.log()
     return(
 
-        <>{loading? <h2>Cargando...</h2>: 
-       `${data.name}
-        ${data.price}`}
+        <>
+       <h1>{productos.filter((prod)=>prod.id==id)[0].name}</h1>
         
         </>
     )

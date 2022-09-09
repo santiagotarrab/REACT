@@ -32,10 +32,13 @@ function App() {
             <Route path='/contacto' element={<Contacto />} />
             <Route path='/nosotros' element={<Nosotros />} />
             <Route path='/productos/:tipoPelicula' element={ <ItemListContainer />} />
-            <Route path='*' element={<NoExiste />} />
+            <Route path='*' element={<ItemListContainer />} />
+          
+            <Route path='/item/:id' element={<ItemDetailContainer /> } />
+            
           </Routes>
-          {/*
-          <ItemDetailContainer /> */}
+          
+         
         </div>
       </div>
      

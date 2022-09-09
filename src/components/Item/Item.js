@@ -1,18 +1,17 @@
 import { Children } from "react";
+import { Link } from "react-router-dom";
 import { Contador } from "../Contador/Contador";
 import "./Item.css";
 
-export function Item(props) {
-
-  console.log("lista",props.list);
-
+export const Item = ({item})=>  {
+console.log(item.img)
   return (
     <>
-      {props.list.map((el) => (
+  
         <div class="container-item">
-          <div>{el.name}</div>
-          <div>{el.price}</div>
-           <img src={el.img} alt="" />  
+          <div>{item.name}</div>
+          <div>{item.price}</div>
+          <img src={require(`../../img/${item.img}`)} alt="" />  
 
           <Contador>
             <button>-</button>
@@ -20,7 +19,7 @@ export function Item(props) {
           </Contador>
 
         </div>
-      ))}
+    
     </>
   );
 }
