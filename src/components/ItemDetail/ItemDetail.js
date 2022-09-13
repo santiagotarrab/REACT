@@ -1,33 +1,41 @@
 import getFetch from "../../helper/helper"
 import {useState, useEffect} from 'react'
 import { productos } from "../../helper/helper"
-export const ItemDetail = ({id, pasarValor})=>{
+import { ItemCounter } from "../ItemCounter/ItemCounter"
+import { useContext } from "react"
+import { CartContext } from "../../Context/CartContext"
 
+
+
+export const ItemDetail = ({id, pasarValor})=>{
+    const {addProduct} = useContext(CartContext)
     const [contador,setContador]=useState(0)
+    
+    
     const sumar = ()=>{setContador(contador+1)}
     const restar = ()=>{
         if(contador>=1){setContador(contador-1)}}
 
 
-    const funcion=(ev)=>{
-        ev.preventDefault()
-        pasarValor(contador)        
+    const onAdd=(count)=>{
+        const newProduct= {...productos.find(item=>item.id==id), cantidad:count}
+        addProduct(newProduct)
+       
         
 
     }   
 
     return(
 
-
         <>
-       <h1>{productos.filter((prod)=>prod.id==id)[0].name}</h1>
+       <h1>{productos.find((prod)=>prod.id==id).name}</h1>
        <div>
         
-        <img src={`../img/${productos.filter((prod)=>prod.id==id)[0].img}`} alt="" />
+        <img src={`../img/${productos.find((prod)=>prod.id==id).img}`} alt="" />
        </div>
-       <button onClick={restar}>-</button> 
-       <button onClick={sumar}>+</button> 
-       <button onClick={funcion}>PASAR VALOR</button> 
+        <ItemCounter initial={0} stock={10} onAdd={onAdd} />
+
+
  
         <div>{contador}</div>
         </>
